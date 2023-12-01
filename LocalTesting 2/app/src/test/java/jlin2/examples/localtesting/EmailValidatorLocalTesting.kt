@@ -41,4 +41,14 @@ class EmailValidatorLocalTesting {
     fun testWithoutDomain() {
         Assert.assertFalse(EmailValidator.isValidEmail(INVALID_EMAIL_4))
     }
+
+    @Test
+    fun testEmptyString() {
+        Assert.assertFalse(EmailValidator.isValidEmail(EMPTY_EMAIL))
+    }
+
+    @Test
+    fun testNull() {
+        Assert.assertFalse(EmailValidator.isValidEmail(null))
+    }
 }
