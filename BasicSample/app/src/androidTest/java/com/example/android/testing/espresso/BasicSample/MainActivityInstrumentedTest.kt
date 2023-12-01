@@ -46,4 +46,12 @@ class MainActivityInstrumentedTest {
         onView(withId(R.id.show_text_view)).check(matches(isDisplayed()))
         onView(withId(R.id.show_text_view)).check(matches(withText(R.string.test_text)))
     }
+
+    @Test
+    fun testChangeTextButtonWithEmptyInput() {
+        onView(withId(R.id.editTextUserInput)).perform(typeText(EMPTY_STRING))
+        onView(withId(R.id.changeTextBt)).perform(click())
+
+        onView(withId(R.id.textToBeChanged)).check(matches(withText(R.string.empty_text)))
+    }
 }
