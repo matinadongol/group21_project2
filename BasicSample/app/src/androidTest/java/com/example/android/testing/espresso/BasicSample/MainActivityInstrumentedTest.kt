@@ -21,6 +21,7 @@ class MainActivityInstrumentedTest {
         val STRINGL_TO_BE_TYPED2 = "abcdef"
         val EMPTY_STRING = ""
     }
+
     @get:Rule
     val activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
@@ -69,5 +70,14 @@ class MainActivityInstrumentedTest {
         onView(withId(R.id.changeTextBt)).perform(click())
 
         onView(withId(R.id.textToBeChanged)).check(matches(withText(R.string.test_text2)))
+    }
+
+    @Test
+    fun testOpenActivityAndChangeTextButtonWithText() {
+        onView(withId(R.id.editTextUserInput)).perform(typeText(STRINGL_TO_BE_TYPED2))
+        onView(withId(R.id.activityChangeTextBtn)).perform(click())
+
+        onView(withId(R.id.show_text_view)).check(matches(isDisplayed()))
+        onView(withId(R.id.show_text_view)).check(matches(withText(R.string.test_text2)))
     }
 }
