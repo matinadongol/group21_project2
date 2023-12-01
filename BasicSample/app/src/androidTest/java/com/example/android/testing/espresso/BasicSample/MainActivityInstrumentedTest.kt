@@ -28,4 +28,13 @@ class MainActivityInstrumentedTest {
     fun validateStringsInTextView() {
         onView(withId(R.id.textToBeChanged)).check(matches(withText(DEFAULT_STRING)))
     }
+
+    @Test
+    fun testChangeTextButton() {
+        onView(withId(R.id.editTextUserInput))
+            .perform(typeText(STRING_TO_BE_TYPED))
+        onView(withId(R.id.changeTextBt)).perform(click())
+
+        onView(withId(R.id.textToBeChanged)).check(matches(withText(R.string.test_text)))
+    }
 }
