@@ -19,5 +19,8 @@
     <string name="hello_world">Hello Espresso!</string>
     <string name="change_text">Change text</string>
     <string name="type_something">type something…</string>
+    <string name="test_text">123</string>
+    <string name="test_text2">abcdef</string>
+    <string name="empty_text"></string>
     <string name="open_activity_and_change_text">Open activity and change text</string>
 </resources>
