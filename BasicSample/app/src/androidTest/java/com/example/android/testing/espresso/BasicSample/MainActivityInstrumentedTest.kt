@@ -35,7 +35,6 @@ class MainActivityInstrumentedTest {
         onView(withId(R.id.editTextUserInput))
             .perform(typeText(STRING_TO_BE_TYPED))
         onView(withId(R.id.changeTextBt)).perform(click())
-
         onView(withId(R.id.textToBeChanged)).check(matches(withText(R.string.test_text)))
     }
 
@@ -43,7 +42,6 @@ class MainActivityInstrumentedTest {
     fun testOpenActivityAndChangeTextButton() {
         onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED))
         onView(withId(R.id.activityChangeTextBtn)).perform(click())
-
         onView(withId(R.id.show_text_view)).check(matches(isDisplayed()))
         onView(withId(R.id.show_text_view)).check(matches(withText(R.string.test_text)))
     }
@@ -52,7 +50,6 @@ class MainActivityInstrumentedTest {
     fun testChangeTextButtonWithEmptyInput() {
         onView(withId(R.id.editTextUserInput)).perform(typeText(EMPTY_STRING))
         onView(withId(R.id.changeTextBt)).perform(click())
-
         onView(withId(R.id.textToBeChanged)).check(matches(withText(R.string.empty_text)))
     }
 
@@ -60,7 +57,6 @@ class MainActivityInstrumentedTest {
     fun testShowTextActivityWithEmptyInput() {
         onView(withId(R.id.editTextUserInput)).perform(typeText(EMPTY_STRING))
         onView(withId(R.id.activityChangeTextBtn)).perform(click())
-
         onView(withId(R.id.show_text_view)).check(matches(withText(R.string.empty_text)))
     }
 
@@ -68,7 +64,6 @@ class MainActivityInstrumentedTest {
     fun testChangeTextButtonWithText() {
         onView(withId(R.id.editTextUserInput)).perform(typeText(STRINGL_TO_BE_TYPED2))
         onView(withId(R.id.changeTextBt)).perform(click())
-
         onView(withId(R.id.textToBeChanged)).check(matches(withText(R.string.test_text2)))
     }
 
@@ -76,7 +71,6 @@ class MainActivityInstrumentedTest {
     fun testOpenActivityAndChangeTextButtonWithText() {
         onView(withId(R.id.editTextUserInput)).perform(typeText(STRINGL_TO_BE_TYPED2))
         onView(withId(R.id.activityChangeTextBtn)).perform(click())
-
         onView(withId(R.id.show_text_view)).check(matches(isDisplayed()))
         onView(withId(R.id.show_text_view)).check(matches(withText(R.string.test_text2)))
     }
