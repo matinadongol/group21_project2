@@ -31,4 +31,14 @@ class EmailValidatorLocalTesting {
     fun testDoubleDots() {
         Assert.assertFalse(EmailValidator.isValidEmail(INVALID_EMAIL_2))
     }
+
+    @Test
+    fun testWithoutUsername() {
+        Assert.assertFalse(EmailValidator.isValidEmail(INVALID_EMAIL_3))
+    }
+
+    @Test
+    fun testWithoutDomain() {
+        Assert.assertFalse(EmailValidator.isValidEmail(INVALID_EMAIL_4))
+    }
 }
