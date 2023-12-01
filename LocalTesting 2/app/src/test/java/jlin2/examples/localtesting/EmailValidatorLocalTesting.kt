@@ -21,4 +21,14 @@ class EmailValidatorLocalTesting {
     fun testSubDomainFormat() {
         Assert.assertTrue(EmailValidator.isValidEmail(VALID_EMAIL_2))
     }
+
+    @Test
+    fun testIncorrectDomain() {
+        Assert.assertFalse(EmailValidator.isValidEmail(INVALID_EMAIL_1))
+    }
+
+    @Test
+    fun testDoubleDots() {
+        Assert.assertFalse(EmailValidator.isValidEmail(INVALID_EMAIL_2))
+    }
 }
